@@ -1,2 +1,7 @@
 ﻿/RabbitSimple/.vs/RabbitSimple
 /RabbitSimple/obj
+/.vs/RabbitSimple
+/RabbitConsume/.vs
+/RabbitConsume/bin/Debug/net8.0
+/RabbitConsume/obj
+/RabbitPublish/obj
