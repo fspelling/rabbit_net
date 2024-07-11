@@ -58,3 +58,5 @@ consumer.Received += (innerModel, ea) =>
 };
 
 model.BasicConsume(queueName, false, consumer);
+
+Console.ReadLine();
