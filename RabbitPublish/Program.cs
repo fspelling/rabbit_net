@@ -21,7 +21,7 @@ model.ConfirmSelect();
 var exchangeName = "hello_exchange";
 var queueName = "queue_hello";
 
-model.ExchangeDeclare(exchangeName, "FANOUT", true, false, null);
+model.ExchangeDeclare(exchangeName, "fanout", true, false, null);
 model.QueueDeclare(queueName, true, false, false, null);
 model.QueueBind(queueName, exchangeName, string.Empty, null);
 
@@ -33,7 +33,7 @@ var propsBasics = model.CreateBasicProperties();
 propsBasics.Headers = new Dictionary<string, object>() {{ "content-type", "application/json" }};
 propsBasics.DeliveryMode = 2;
 
-for (int i = 0; i < 100; i++)
+for (int i = 0; i < 100_000_000; i++)
     model.BasicPublish(exchangeName, string.Empty, propsBasics, body);
 
 Console.ReadLine();

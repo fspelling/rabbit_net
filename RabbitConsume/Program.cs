@@ -20,7 +20,7 @@ using var model = connection.CreateModel();
 var exchangeName = "hello_exchange";
 var queueName = "queue_hello";
 
-model.ExchangeDeclare(exchangeName, "FANOUT", true, false, null);
+model.ExchangeDeclare(exchangeName, "fanout", true, false, null);
 model.QueueDeclare(queueName, true, false, false, null);
 model.QueueBind(queueName, exchangeName, string.Empty, null);
 

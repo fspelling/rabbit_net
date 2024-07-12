@@ -1,0 +1,23 @@
+version: '1.0'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    volumes:
+        - mq_data:/var/lib/rabbitmq/mnesia
+    ports:
+        - "15672:15672"
+        - "5672:5672"
+    environment:
+        RABBITMQ_DEFAULT_USER: username
+        RABBITMQ_DEFAULT_PASS: password
+        RABBITMQ_DEFAULT_VHOST: test_host
+    networks:
+        - rabbitmq_demo
+
+volumes:
+  mq_data:
+  
+networks:
+  rabbitmq_demo:
+    driver: bridge
